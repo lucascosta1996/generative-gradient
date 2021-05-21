@@ -5,18 +5,17 @@ import { getRandomArbitrary, getRandomColor } from '../utils/helpers';
 const Colors = styled.div`
   background-color: ${props => props.color};
   border-radius: ${props => props.borderRadius};
-  position: absolute;
-  left: ${props => props.left}%;
-  top: ${props => props.top}%;
-  height: ${props => props.size}px;
-  width: ${props => props.size}px;
   box-shadow: 10px 10px 187px 259px ${props => props.color};
-  z-index: 2;
+  height: ${props => props.size}px;
+  left: ${props => props.left}%;
+  position: absolute;
+  top: ${props => props.top}%;
   transition: all 4s ease-in-out;
+  width: ${props => props.size}px;
 `;
 
 function Gradient() {
-  const radius = `${getRandomArbitrary(0, 90)}% ${getRandomArbitrary(0, 90)}% ${getRandomArbitrary(0, 90)}% ${getRandomArbitrary(0, 90)}%`
+  const randomRadius = `${getRandomArbitrary(0, 90)}% ${getRandomArbitrary(0, 90)}% ${getRandomArbitrary(0, 90)}% ${getRandomArbitrary(0, 90)}%`
 
   return (
     <>
@@ -28,7 +27,7 @@ function Gradient() {
             left={getRandomArbitrary(0, 90)}
             top={getRandomArbitrary(0, 90)}
             size={getRandomArbitrary(80, 100)}
-            borderRadius={radius}
+            borderRadius={randomRadius}
           />
         ))
       }
