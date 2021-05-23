@@ -10,15 +10,15 @@ const Colors = styled.div`
   left: ${props => props.left}%;
   position: absolute;
   top: ${props => props.top}%;
-  transition: all 4s ease-in-out;
+  transition: all 3s ease-in-out;
   width: ${props => props.size}px;
 `;
 
-function Gradient() {
+function GradientSpheres({ onClick }) {
   const randomRadius = `${getRandomArbitrary(0, 90)}% ${getRandomArbitrary(0, 90)}% ${getRandomArbitrary(0, 90)}% ${getRandomArbitrary(0, 90)}%`
 
   return (
-    <>
+    <div onClick={() => onClick()}>
       {
         Array.from(Array(30).keys()).map(item => (
           <Colors
@@ -31,8 +31,8 @@ function Gradient() {
           />
         ))
       }
-    </>
+    </div>
   );
 }
 
-export default Gradient;
+export default GradientSpheres;
